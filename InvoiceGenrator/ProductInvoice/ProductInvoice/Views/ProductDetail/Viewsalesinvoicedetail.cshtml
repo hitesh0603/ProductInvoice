@@ -1,0 +1,145 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Viewsalesinvoicedetail</title>
+    @*<meta name="viewport" content="width=device-width, initial-scale=1.0">*@
+    @*<link href="~/wwwroot/Css/foundation.css" rel="stylesheet" />*@
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="~/wwwroot/Css/InvoiceDetail.css" rel="stylesheet" />
+
+
+    <script src="~/wwwroot/JS/jquery-1.10.2.js"></script>
+    <script src="~/wwwroot/JS/ProductInvoice.js"></script>
+
+</head>
+<body>
+    <div class="bodycontent">
+        <div class="invoiceform">
+            <div class="divCustomerdetail">
+                <div class="Customerheader"> Invoice</div>
+                @*<div id="divCustomerdetail">*@
+                <div class="col-md-6 col-xs-12 divCustomer">
+                    <span class="col-sm-4 lblCustomerName ">Invoice No</span>
+                    <label class="col-sm-4 ViewInvoiceNo"></label>
+                </div>
+                <div class="col-md-6 col-xs-12 divCustomer">
+                    <span class="col-sm-4 lblCustomerName ">Inventory Updated</span>
+                    <label class=" col-sm-4 ViewInventoryUpdated"></label>
+                </div>
+                <div class="col-md-6 col-xs-12 divCustomer">
+                    <span class="col-sm-4 lblCustomerName ">Customer Name</span>
+                    <label class="col-sm-4 ViewCustomerName"></label>
+                </div>
+                <div class="col-md-6 col-xs-12 divCustomer">
+                    <span class="col-sm-4 lblInvoiceDate">Invoice Date</span>
+                    <label class="col-sm-4 ViewInvoiceDate"></label>
+                </div>
+
+                <div class="col-md-6 col-xs-12 divCustomer">
+                    <span class="col-sm-4 lblContactNumber">Contact Number</span>
+                    <label class="col-sm-4 ViewContactNumber"></label>
+                </div>
+                <div class="col-md-6 col-xs-12 divCustomer">
+                    <span class="lblState col-sm-4">Select State</span>
+                    <label class="col-sm-4 ViewState"></label>
+                </div>
+
+                <div class="col-md-6 col-xs-12 divCustomer">
+                    <span class="lblGSTNo col-sm-4">GST No</span>
+                    <label class="col-sm-4 labelGSTNo"></label>
+                </div>
+                <div class="col-md-6 col-xs-12 divCustomer">
+                    <span class="lblBillingAddress col-sm-4">Billing Address</span>
+                    <label class="col-sm-4 ViewBillingAddress"></label>
+                </div>
+                <div class="col-md-6 col-xs-12 divCustomer">
+                    <span class="lblComments col-sm-4">Comments</span>
+                    <label class="col-sm-4 ViewComments"></label>
+                </div>
+                <div class="col-md-6 col-xs-12 divCustomer">
+                    <span class="col-sm-4">Created By</span>
+                    <label class="col-sm-4 ViewNameAndDate"></label>
+                </div>
+            </div>
+            <div class="divInvoiceItems">
+                <div class="Invoiceheader">Invoice Items</div>
+                <table class="Producttable">
+                    <thead class="ProductTableheading">
+                        <tr class="Productheadingrow">
+                            <th class="Productheadingcol productSNheading">Sl No</th>
+                            <th class="Productheadingcol Productnameheadingheading">Product Name</th>
+                            <th class="Productheadingcol ProductSaletypeheading">Sale Type</th>
+                            <th class="Productheadingcol ProductQuantityheading">Quantity</th>
+                            <th class="Productheadingcol ProductPriceheading">Price</th>
+                            <th class="Productheadingcol ProductDiscountheading">Discount</th>
+                            <th class="Productheadingcol ProductRateheading">Rate</th>
+                            <th class="Productheadingcol ProductPriceAfterTaxesheading">Price After Taxes</th>
+                            <th class="Productheadingcol ProductSubTotalheading">Sub Total</th>
+                            <th class="Productheadingcol ProductCGSTheading">CGST</th>
+                            <th class="Productheadingcol ProductSGSTheading">SGST</th>
+                            <th class="Productheadingcol ProductTaxDetailsheading">Tax Details</th>
+                            <th class="Productheadingcol ProductSubTotalAfterTaxesheading">Sub Total After Taxes</th>
+                            <th class="Productheadingcol ProductUpdateheading">Update</th>
+                        </tr>
+                    </thead>
+                    <tbody class="ProductTableBody">
+                        <tr class="Producbodyrow">
+                            <td class="Productheadingcol producttotal">Total</td>
+                            <td class="Productheadingcol Productname"></td>
+                            <td class="Productheadingcol ProductSaletype"></td>
+                            <td class="Productheadingcol ProductQuantity"></td>
+                            <td class="Productheadingcol ProductPrice"></td>
+                            <td class="Productheadingcol ProductDiscount"></td>
+                            <td class="Productheadingcol ProductRate"></td>
+                            <td class="Productheadingcol ProductPriceAfterTaxes"></td>
+                            <td class="Productheadingcol ProductSubTotal">0.00</td>
+                            <td class="Productheadingcol ProductCGST"></td>
+                            <td class="Productheadingcol ProductSGST"></td>
+                            <td class="Productheadingcol ProductTaxDetails"></td>
+                            <td class="Productheadingcol ProductSubTotalAfterTaxes">0</td>
+                            <td class="Productheadingcol ProductUpdate"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+                <div class="divProductBill">
+                    <div class="col-md-6 col-xs-12">
+                        <span class="col-sm-6 ">Total Amount</span>
+                        <span class="TotalAmount">0.00</span>
+                    </div>
+                    <div class="col-md-6 col-xs-12">
+                        <span class="col-sm-6">Discount on Items</span>
+                        <span class="TotalDiscountonItems">0.00</span>
+                    </div>
+                    <div class="col-md-6 col-xs-12">
+                        <span class="col-sm-6">Net Amount</span>
+                        <span class="TotalNetAmount">0.00</span>
+                    </div>
+                    <div class="col-md-6 col-xs-12">
+                        <span class="col-sm-6">Roundoff Amount</span>
+                        <span class="RoundoffAmount">0.00</span>
+                    </div>
+                    <div class="col-md-6 col-xs-12">
+                        <span class="col-sm-6">Amount Payable</span>
+                        <span class="TotalAmountPayable">0.00</span>
+                    </div>
+                </div>
+                <div class="Createinvoice  col-xs-12">
+                    <button class="btnEditinvoice btn btn-sm">Edit Invoice</button>
+                    <button class="btnCancelinvoice btn btn-sm">Cancel Invoice</button>
+                    <button class="btnSendinvoicebySms btn btn-sm">Send SMS</button>
+                    <button class="btnSendinvoicebyMail btn btn-sm">Send Email</button>
+                    <button class="btndownloadinvoice btn btn-sm">Download As PDF</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,194 @@
+﻿
+@{
+    ViewBag.Title = "CustomerAndProductDetail";
+}
+
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @*<link href="~/wwwroot/Css/foundation.css" rel="stylesheet" />*@
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="~/wwwroot/Css/InvoiceDetail.css" rel="stylesheet" />
+
+
+    <script src="~/wwwroot/JS/jquery-1.10.2.js"></script>
+    <script src="~/wwwroot/JS/ProductInvoice.js"></script>
+</head>
+<body>
+    <div class="bodycontent">
+        <div class="invoiceform">
+            <div class="divCustomerdetail">
+                <div class="Customerheader">Create Invoice</div>
+                @*<div id="divCustomerdetail">*@
+                <div class="col-md-6 col-xs-12 divCustomer">
+                    <span class="col-sm-4 lblCustomerName ">Select Customer</span>
+                    <span class="txtCustomerdetail">
+                        <input type="text" placeholder="Start typing customer name.." class="txtCustomerName formInput" />
+                    </span>
+                </div>
+                <div class="col-md-6 col-xs-12 divCustomer">
+                    <span class="col-sm-4 lblInvoiceDate">Invoice Date</span>
+                    <span class="txtCustomerdetail">
+                        <span type="date" class="txtInvoiceDate formInput"></span>
+                    </span>
+                </div>
+                <div class="col-md-6 col-xs-12 divCustomer">
+                    <span class="col-sm-4 lblInventory">Update Inventory</span>
+                    <span class="txtCustomerdetail">
+                        <input type="text" class="formInput formInput txtInventory" />
+                    </span>
+                </div>
+
+                <div class="col-md-6 col-xs-12 divCustomer">
+                    <span class="col-sm-4 lblContactNumber">Contact Number</span>
+                    <span class="txtCustomerdetail">
+                        <input type="number" placeholder="Contact person Number" class="formInput txtContactNumber" />
+                    </span>
+                </div>
+
+                <div class="col-md-6 col-xs-12 divCustomer">
+                    <span class="lblState col-sm-4">Select State</span>
+                    <span class="txtCustomerdetail">
+                        <select class="formInput txtState">
+                            <option value="-1">Select</option>
+                            <option value="1">Jammu &amp; Kashmir</option>
+                            <option value="2">Himachal Pradesh</option>
+                            <option value="3">Punjab</option>
+                            <option value="4">Chandigarh</option>
+                            <option value="5">Uttarakhand</option>
+                            <option value="6">Haryana</option>
+                            <option value="7">Delhi</option>
+                            <option value="8">Rajasthan</option>
+                            <option value="9">Uttar Pradesh</option>
+                            <option value="10">Bihar</option>
+                            <option value="11">Sikkim</option>
+                            <option value="12">Arunachal Pradesh</option>
+                            <option value="13">Nagaland</option>
+                            <option value="14">Manipur</option>
+                            <option value="15">Mizoram</option>
+                            <option value="16">Tripura</option>
+                            <option value="17">Meghalaya</option>
+                            <option value="18">Assam</option>
+                            <option value="19">West Bengal</option>
+                            <option value="20">Jharkhand</option>
+                            <option value="21">Odisha</option>
+                            <option value="22">Chhattisgarh</option>
+                            <option value="23">Madhya Pradesh</option>
+                            <option value="24">Gujarat</option>
+                            <option value="25">Daman &amp; Diu</option>
+                            <option value="26">Dadra &amp; Nagar Haveli</option>
+                            <option value="27">Maharashtra</option>
+                            <option value="28">Karnataka</option>
+                            <option value="29">Goa</option>
+                            <option value="30">Lakshadweep</option>
+                            <option value="31">Kerala</option>
+                            <option value="32">Tamil Nadu</option>
+                            <option value="33">Puducherry</option>
+                            <option value="34">Andaman &amp; Nicobar Islands</option>
+                            <option value="35">Telangana</option>
+                            <option value="36">Andrapradesh</option>
+                        </select>
+                    </span>
+                </div>
+
+                <div class="col-md-6 col-xs-12 divCustomer">
+                    <span class="lblGSTNo col-sm-4">GST No</span>
+                    <span class="txtCustomerdetail">
+                        <input type="number" placeholder="GST No" class="formInput txtGSTNo" />
+                    </span>
+                </div>
+                <div class="col-md-6 col-xs-12 divCustomer">
+                    <span class="lblBillingAddress col-sm-4">Billing Address</span>
+                    <span class="txtCustomerdetail">
+                        <textarea placeholder="Billing Address" class="formInput txtBillingAddress"></textarea>
+                    </span>
+                </div>
+                <div class="col-md-6 col-xs-12 divCustomer">
+                    <span class="lblComments col-sm-4">Comments</span>
+                    <span class="txtCustomerdetail">
+                        <textarea class="formInput txtComments"></textarea>
+                    </span>
+                </div>
+                @*</div>*@
+            </div>
+            <div class="divInvoiceItems">
+                <div class="Invoiceheader">Invoice Items</div>
+                @*<div id="divInvoiceItems">*@
+                <table class="Producttable">
+                    <thead class="ProductTableheading">
+                        <tr class="Productheadingrow">
+                            <th class="Productheadingcol productSNheading">Sl No</th>
+                            <th class="Productheadingcol Productnameheadingheading">Product Name</th>
+                            <th class="Productheadingcol ProductSaletypeheading">Sale Type</th>
+                            <th class="Productheadingcol ProductQuantityheading">Quantity</th>
+                            <th class="Productheadingcol ProductPriceheading">Price</th>
+                            <th class="Productheadingcol ProductDiscountheading">Discount</th>
+                            <th class="Productheadingcol ProductRateheading">Rate</th>
+                            <th class="Productheadingcol ProductPriceAfterTaxesheading">Price After Taxes</th>
+                            <th class="Productheadingcol ProductSubTotalheading">Sub Total</th>
+                            <th class="Productheadingcol ProductCGSTheading">CGST</th>
+                            <th class="Productheadingcol ProductSGSTheading">SGST</th>
+                            <th class="Productheadingcol ProductTaxDetailsheading">Tax Details</th>
+                            <th class="Productheadingcol ProductSubTotalAfterTaxesheading">Sub Total After Taxes</th>
+                            <th class="Productheadingcol ProductUpdateheading">Update</th>
+                        </tr>
+                    </thead>
+                    <tbody class="ProductTableBody">
+                        <tr class="Producbodyrow">
+                            <th class="Productheadingcol producttotal">Total</th>
+                            <th class="Productheadingcol Productname"></th>
+                            <th class="Productheadingcol ProductSaletype"></th>
+                            <th class="Productheadingcol ProductQuantity"></th>
+                            <th class="Productheadingcol ProductPrice"></th>
+                            <th class="Productheadingcol ProductDiscount"></th>
+                            <th class="Productheadingcol ProductRate"></th>
+                            <th class="Productheadingcol ProductPriceAfterTaxes"></th>
+                            <th class="Productheadingcol ProductSubTotal">0.00</th>
+                            <th class="Productheadingcol ProductCGST"></th>
+                            <th class="Productheadingcol ProductSGST"></th>
+                            <th class="Productheadingcol ProductTaxDetails"></th>
+                            <th class="Productheadingcol ProductSubTotalAfterTaxes">0</th>
+                            <th class="Productheadingcol ProductUpdate"></th>
+                    </tbody>
+                </table>
+
+                <div class="srchProduct">
+                    <select>
+                        <option value="volvo">Volvo</option>
+                        <option value="saab">Saab</option>
+                        <option value="mercedes">Mercedes</option>
+                        <option value="audi">Audi</option>
+                    </select>
+                </div>
+                <div >
+                    <div class="col-md-6 col-xs-12 ">
+                        <label class="col-sm-4">Total Amount</label>
+                        <span>0.00</span>
+                    </div>
+                    <div class="col-md-6 col-xs-12">
+                        <label class="col-sm-4">Discount on Items</label>
+                        <span>0.00</span>
+                    </div>
+                    <div class="col-md-6 col-xs-12">
+                        <label class="col-sm-4">Net Amount</label>
+                        <span>0.00</span>
+                    </div>
+                    <div class="col-md-6 col-xs-12">
+                        <label  class="col-sm-4">Roundoff Amount</label>
+                        <span>0.00</span>
+                    </div>
+                    <div class="col-md-6 col-xs-12">
+                        <label  class="col-sm-4">Amount Payable</label>
+                        <span>0.00</span>
+                    </div>
+                </div>
+            </div>
+            @*</div>*@
+        </div>
+    </div>
+</body>
+
+
+</html>

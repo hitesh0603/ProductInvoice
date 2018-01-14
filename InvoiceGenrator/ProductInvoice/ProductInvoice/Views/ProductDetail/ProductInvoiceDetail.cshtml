@@ -1,0 +1,230 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>ProductInvoiceDetail</title>
+    @*<meta name="viewport" content="width=device-width, initial-scale=1.0">*@
+    @*<link href="~/wwwroot/Css/foundation.css" rel="stylesheet" />*@
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="~/wwwroot/Css/InvoiceDetail.css" rel="stylesheet" />
+
+
+    <script src="~/wwwroot/JS/jquery-1.10.2.js"></script>
+    <script src="~/wwwroot/JS/ProductInvoice.js"></script>
+</head>
+<body>
+    <div class="bodycontent">
+        <div class="invoiceform">
+            <div class="divCustomerdetail">
+                <div class="Customerheader">Create Invoice</div>
+                @*<div id="divCustomerdetail">*@
+                <div class="col-md-6 col-xs-12 divCustomer">
+                    <span class="col-sm-4 lblCustomerName ">Select Customer</span>
+                    <span class="txtCustomerdetail">
+                        <input type="text" placeholder="Start typing customer name.." class="txtCustomerName formInput" />
+                    </span>
+                </div>
+                <div class="col-md-6 col-xs-12 divCustomer">
+                    <span class="col-sm-4 lblInvoiceDate">Invoice Date</span>
+                    <span class="txtCustomerdetail">
+                        <span type="date" class="txtInvoiceDate formInput"></span>
+                    </span>
+                </div>
+                <div class="col-md-6 col-xs-12 divCustomer">
+                    <span class="col-sm-4 lblInventory">Update Inventory</span>
+                    <span class="txtCustomerdetail">
+                        <label class="col-sm-3  lblUpdateInventory">YES</label>
+                        <a class="col-sm-4 UpdateInventorylink">Change</a>
+                    </span>
+                </div>
+
+                <div class="col-md-6 col-xs-12 divCustomer">
+                    <span class="col-sm-4 lblContactNumber">Contact Number</span>
+                    <span class="txtCustomerdetail">
+                        <input type="number" placeholder="Contact person Number" class="formInput txtContactNumber" />
+                    </span>
+                </div>
+
+                <div class="col-md-6 col-xs-12 divCustomer">
+                    <span class="lblState col-sm-4">Select State</span>
+                    <span class="txtCustomerdetail">
+                        <select class="formInput txtState">
+                            <option value="-1">Select</option>
+                            <option value="1">Jammu &amp; Kashmir</option>
+                            <option value="2">Himachal Pradesh</option>
+                            <option value="3">Punjab</option>
+                            <option value="4">Chandigarh</option>
+                            <option value="5">Uttarakhand</option>
+                            <option value="6">Haryana</option>
+                            <option value="7">Delhi</option>
+                            <option value="8">Rajasthan</option>
+                            <option value="9">Uttar Pradesh</option>
+                            <option value="10">Bihar</option>
+                            <option value="11">Sikkim</option>
+                            <option value="12">Arunachal Pradesh</option>
+                            <option value="13">Nagaland</option>
+                            <option value="14">Manipur</option>
+                            <option value="15">Mizoram</option>
+                            <option value="16">Tripura</option>
+                            <option value="17">Meghalaya</option>
+                            <option value="18">Assam</option>
+                            <option value="19">West Bengal</option>
+                            <option value="20">Jharkhand</option>
+                            <option value="21">Odisha</option>
+                            <option value="22">Chhattisgarh</option>
+                            <option value="23">Madhya Pradesh</option>
+                            <option value="24">Gujarat</option>
+                            <option value="25">Daman &amp; Diu</option>
+                            <option value="26">Dadra &amp; Nagar Haveli</option>
+                            <option value="27">Maharashtra</option>
+                            <option value="28">Karnataka</option>
+                            <option value="29">Goa</option>
+                            <option value="30">Lakshadweep</option>
+                            <option value="31">Kerala</option>
+                            <option value="32">Tamil Nadu</option>
+                            <option value="33">Puducherry</option>
+                            <option value="34">Andaman &amp; Nicobar Islands</option>
+                            <option value="35">Telangana</option>
+                            <option value="36">Andrapradesh</option>
+                        </select>
+                    </span>
+                </div>
+
+                <div class="col-md-6 col-xs-12 divCustomer">
+                    <span class="lblGSTNo col-sm-4">GST No</span>
+                    <span class="txtCustomerdetail">
+                        <input type="number" placeholder="GST No" class="formInput txtGSTNo" />
+                    </span>
+                </div>
+                <div class="col-md-6 col-xs-12 divCustomer">
+                    <span class="lblBillingAddress col-sm-4">Billing Address</span>
+                    <span class="txtCustomerdetail">
+                        <textarea placeholder="Billing Address" class="formInput txtBillingAddress"></textarea>
+                    </span>
+                </div>
+                <div class="col-md-6 col-xs-12 divCustomer">
+                    <span class="lblComments col-sm-4">Comments</span>
+                    <span class="txtCustomerdetail">
+                        <textarea class="formInput txtComments"></textarea>
+                    </span>
+                </div>
+                @*</div>*@
+            </div>
+            <div class="divInvoiceItems">
+                <div class="Invoiceheader">Invoice Items</div>
+                <table class="Producttable">
+                    <thead class="ProductTableheading">
+                        <tr class="Productheadingrow">
+                            <th class="Productheadingcol productSNheading">Sl No</th>
+                            <th class="Productheadingcol Productnameheadingheading">Product Name</th>
+                            <th class="Productheadingcol ProductSaletypeheading">Sale Type</th>
+                            <th class="Productheadingcol ProductQuantityheading">Quantity</th>
+                            <th class="Productheadingcol ProductPriceheading">Price</th>
+                            <th class="Productheadingcol ProductDiscountheading">Discount</th>
+                            <th class="Productheadingcol ProductRateheading">Rate</th>
+                            <th class="Productheadingcol ProductPriceAfterTaxesheading">Price After Taxes</th>
+                            <th class="Productheadingcol ProductSubTotalheading">Sub Total</th>
+                            <th class="Productheadingcol ProductCGSTheading">CGST</th>
+                            <th class="Productheadingcol ProductSGSTheading">SGST</th>
+                            <th class="Productheadingcol ProductTaxDetailsheading">Tax Details</th>
+                            <th class="Productheadingcol ProductSubTotalAfterTaxesheading">Sub Total After Taxes</th>
+                            <th class="Productheadingcol ProductUpdateheading">Update</th>
+                        </tr>
+                    </thead>
+                    <tbody class="ProductTableBody">
+                        <tr class="Producbodyrow">
+                            <td class="Productheadingcol producttotal">Total</td>
+                            <td class="Productheadingcol Productname"></td>
+                            <td class="Productheadingcol ProductSaletype"></td>
+                            <td class="Productheadingcol ProductQuantity"></td>
+                            <td class="Productheadingcol ProductPrice"></td>
+                            <td class="Productheadingcol ProductDiscount"></td>
+                            <td class="Productheadingcol ProductRate"></td>
+                            <td class="Productheadingcol ProductPriceAfterTaxes"></td>
+                            <td class="Productheadingcol ProductSubTotal">0.00</td>
+                            <td class="Productheadingcol ProductCGST"></td>
+                            <td class="Productheadingcol ProductSGST"></td>
+                            <td class="Productheadingcol ProductTaxDetails"></td>
+                            <td class="Productheadingcol ProductSubTotalAfterTaxes">0</td>
+                            <td class="Productheadingcol ProductUpdate"></td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+                <div class="srchProduct">
+                    <select id="Productlist">
+                        <option value="-1"></option>
+                        <option value="act 11 nachoz salt 150g">act 11 nachoz salt 150g</option>
+                        <option value="act 11 nachoz jalapeno 150g">act 11 nachoz jalapeno 150g</option>
+                        <option value="act ii cheese and herbs b1g1">act ii cheese and herbs b1g1</option>
+                    </select>
+                </div>
+                <div class="divProductBill">
+                    <div class="col-md-6 col-xs-12">
+                        <span class="col-sm-6 ">Total Amount</span>
+                        <span class="TotalAmount">0.00</span>
+                    </div>
+                    <div class="col-md-6 col-xs-12">
+                        <span class="col-sm-6">Discount on Items</span>
+                        <span class="TotalDiscountonItems">0.00</span>
+                    </div>
+                    <div class="col-md-6 col-xs-12">
+                        <span class="col-sm-6">Net Amount</span>
+                        <span class="TotalNetAmount">0.00</span>
+                    </div>
+                    <div class="col-md-6 col-xs-12">
+                        <span class="col-sm-6">Roundoff Amount</span>
+                        <span class="RoundoffAmount">0.00</span>
+                    </div>
+                    <div class="col-md-6 col-xs-12">
+                        <span class="col-sm-6">Amount Payable</span>
+                        <span class="TotalAmountPayable">0.00</span>
+                    </div>
+                </div>
+                <div class="Createinvoice  col-xs-12">
+                    <button class="btncreateinvoice btn btn-sm">Create Invoice</button>
+                </div>
+            </div>
+
+            <div class="Popupcontent">
+                <div class="ProductDetailMask"></div>
+                <div class="ProductDetailPopUp">
+                    <div class="lblModifyDetail">Modify Details</div>
+                    <div>
+                        <div class="col-xs-12">
+                            <span class="col-sm-6 PopupProductName">Product Name</span>
+                            <span class="col-sm-6 ProductNameVal"></span>
+                        </div>
+                        <div class="col-xs-12">
+                            <span class="col-sm-6">Unit Type</span>
+                            <span class="col-sm-6"><input type="text" class="UnitTypeVal" /></span>
+                        </div>
+                        <div class="col-xs-12">
+                            <span class="col-sm-6">Quantity</span>
+                            <span class="col-sm-6"><input type="number" class="QuantityVal" /> </span>
+                        </div>
+                        <div class="col-xs-12">
+                            <span class="col-sm-6">Rate</span>
+                            <span class="col-sm-6 RateVal"></span>
+                        </div>
+                        <div class="col-xs-12">
+                            <span class="col-sm-6">Discount Percentage</span>
+                            <span class="col-sm-6"><input type="number" class="DiscountPercentageVal" /> </span>
+                        </div>
+                        <div>
+                            <button class="btnUpdate">Update</button>
+                            <button class="btnCancel">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

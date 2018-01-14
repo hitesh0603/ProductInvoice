@@ -1,0 +1,176 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.2;
+    color: #333;
+    background-color: #fff;
+    letter-spacing: 0.5px;
+}
+
+.bodycontent {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-top: 42px;
+    margin-bottom: 3%;
+}
+
+.divCustomer {
+    padding-top: 7px;
+    margin-bottom: 0;
+    text-align: right;
+    width: 55%;
+}
+
+    .divCustomer span {
+        font-weight: bold;
+    }
+
+.formInput {
+    width: 50%;
+    height: 34px;
+    padding: 2px 6px;
+    font-size: 13px;
+    line-height: 1.2;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.txtInvoiceDate {
+    border: none;
+    margin-right: 39%;
+}
+
+.lblUpdateInventory {
+    font-weight: normal;
+}
+
+.txtComments {
+    height: 100px;
+}
+
+.TaxDetailsimag {
+    width: 15px;
+    height: 15px;
+}
+
+.invoiceform {
+    border: 1px solid #A4C2DC;
+}
+
+.Producttable th, .Producttable td {
+    border: 1px solid #ddd;
+}
+
+.Producttable {
+    width: 95%;
+    margin-left: 3%;
+    margin-top: 2%;
+    margin-bottom: 3%;
+}
+
+.Customerheader, .Invoiceheader {
+    width: 100%;
+    margin: 0px auto;
+    text-align: left;
+    background-color: #A4C2DC;
+    font-size: 15px;
+    font-weight: bold;
+    padding-left: 8px;
+    border-radius: 0px;
+    list-style: none;
+}
+
+.Invoiceheader {
+    margin-top: 30%;
+}
+
+.srchProduct {
+    margin-bottom: 3%;
+    margin-left: 5%;
+}
+
+    .srchProduct select {
+        width: 40%;
+        background-color: yellow;
+    }
+
+.divProductBill {
+    margin-bottom: 10%;
+    padding-top: 7px;
+    text-align: right;
+    margin-left: 50%;
+    font-weight: bold;
+}
+
+    .divProductBill div {
+        width: 55%;
+    }
+
+.btncreateinvoice, .btnEditinvoice, .btnCancelinvoice, .btnSendinvoicebySms, .btnSendinvoicebyMail, .btndownloadinvoice {
+    background: #337ab7 none repeat scroll 0 0;
+    color: #ffffff;
+    border: 0px solid;
+}
+
+.Createinvoice {
+    float: none;
+    margin-bottom: 2%;
+}
+
+.Popupcontent {
+    display: none;
+}
+
+.lblModifyDetail {
+    background-color: #A4C2DC;
+}
+
+.ProductDetailMask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    z-index: 1001;
+    opacity: .8
+}
+
+.ProductDetailPopUp {
+    position: fixed;
+    background-color: #fff !important;
+    border-radius: 0;
+    left: 0;
+    min-height: 320px;
+    padding-top: 10px;
+    border: 1px solid #1e1e1e;
+    z-index: 1002;
+    overflow: hidden;
+    width: 49%;
+    margin-left: 25%;
+    margin-right: 25%;
+    top: 15%;
+    line-height: 2;
+}
+
+.btnUpdate, .btnCancel {
+    background-color: #337ab7;
+    width: 20%;
+    margin-top: 2%;
+    margin-left: 20%;
+}
+
+    .btnUpdate:hover, .btnCancel:hover {
+        background-color: green;
+    }
+
+.PopupProductName {
+    word-wrap: break-word;
+}
